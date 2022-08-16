@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iYu-Q0-qaO">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,28 +14,41 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="DarkLightTheme" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-K8-ZBW">
-                                <rect key="frame" x="61.333333333333343" y="406.66666666666669" width="267.33333333333326" height="31"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Dark Theme On">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="darkButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGV-DV-MtT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4Xr-Qg-k3j">
+                                <rect key="frame" x="144.33333333333334" y="404.66666666666669" width="125.33333333333334" height="87"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-K8-ZBW">
+                                        <rect key="frame" x="0.0" y="0.0" width="125.33333333333333" height="31"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Dark Theme On">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="darkButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGV-DV-MtT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mg-Sx-2AT">
+                                        <rect key="frame" x="18.666666666666657" y="56" width="88" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="New View"/>
+                                        <connections>
+                                            <segue destination="K2G-08-xQN" kind="show" id="Xg3-iW-B2f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eAf-K8-ZBW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="23z-Ui-d0g"/>
-                            <constraint firstItem="eAf-K8-ZBW" firstAttribute="width" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.321368" constant="142" id="9dB-aL-Ern"/>
-                            <constraint firstItem="eAf-K8-ZBW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NcA-lq-AgG"/>
-                            <constraint firstItem="eAf-K8-ZBW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0367299" id="dQw-P5-GX3"/>
+                            <constraint firstItem="4Xr-Qg-k3j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h8d-r4-cPb"/>
+                            <constraint firstItem="4Xr-Qg-k3j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lQ9-52-MKg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vWc-16-AeZ">
@@ -51,11 +65,40 @@
                     </navigationItem>
                     <connections>
                         <outlet property="darkButtonOutlet" destination="eAf-K8-ZBW" id="8cz-GP-rfN"/>
+                        <outlet property="newViewButtonOutlet" destination="0mg-Sx-2AT" id="PKP-pR-8HQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7692307692307" y="92.417061611374407"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aFd-A1-nMM">
+            <objects>
+                <viewController id="K2G-08-xQN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EIj-7l-3u6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the new View" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjv-q2-9cK">
+                                <rect key="frame" x="34.333333333333343" y="424" width="345.33333333333326" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JMv-Y8-WDX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qjv-q2-9cK" firstAttribute="centerX" secondItem="EIj-7l-3u6" secondAttribute="centerX" id="86r-cI-2gJ"/>
+                            <constraint firstItem="Qjv-q2-9cK" firstAttribute="centerY" secondItem="EIj-7l-3u6" secondAttribute="centerY" id="bMW-RA-Dqx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="neE-fx-pBo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t73-4Y-otg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="slC-pZ-hkC">
@@ -63,7 +106,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iYu-Q0-qaO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GDp-BG-kHr">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
@@ -83,5 +126,11 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
 
     
     @IBOutlet weak var darkButtonOutlet: UIButton!
+    @IBOutlet weak var newViewButtonOutlet: UIButton!
     
     var isOn = false
     var mainText = "Dark Theme On"
@@ -20,6 +21,7 @@ class HomeViewController: UIViewController {
         print("viewDidLoad")
         navigationItem.title = mainText
         darkButtonOutlet.layer.cornerRadius = 10
+        newViewButtonOutlet.layer.cornerRadius = 10
     }
 
     @IBAction func userInfoTapped(_ sender: Any) {
